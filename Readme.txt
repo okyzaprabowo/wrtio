@@ -1,6 +1,8 @@
 This is simple shell scripting for accessing GPIO OpenWRT
 Tested in GL.Inet Router
 
+At first, upload all of files in this repo to your router, and then copy pinmode, readpin, and write to /bin folder. 
+
 You can use "pinmode" like:
 use: pinmode config_method pin_number
 example: pinmode output 21
