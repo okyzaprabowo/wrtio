@@ -1,0 +1,32 @@
+# MinIoT, A Simple Internet of Things Framework for OpenWRT
+# Developed by Okyza Maherdy Prabowo
+# Email: okyzaprabowo@students.itb.ac.id
+
+#variable for config choice
+SET_INPUT="input"
+SET_OUTPUT="output"
+SET_CLEAR="clear"
+
+#check if param length is equal to 2 
+if [ "$#" == "2" ]; then
+	#configuration for output
+	if [ "$1" == "$SET_OUTPUT" ]; then
+		echo $2 > /sys/class/gpio/export
+		echo out > /sys/class/gpio/gpio$2/direction
+	#configuration for input
+	elif [ "$1" == "$SET_INPUT" ]; then
+		echo $2 > /sys/class/gpio/export
+		echo in > /sys/class/gpio/gpio$2/direction
+	#configuration for clear the state of pin
+	elif [ "$1" == "$SET_CLEAR" ]; then
+	        echo 0 > /sys/devices/virtual/gpio/gpio$2/value
+		echo $2 > /sys/class/gpio/unexport
+	else
+		echo "	use: pinmode config_method pin_number"
+		echo "	config_method : input or output"
+	fi
+else 
+	echo "	use: pinmode config_method pin_number"
+	echo "	config_method : input or output"
+	echo "	example: pinmode input 21"
+fi

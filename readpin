@@ -1,0 +1,11 @@
+# MinIoT, A Simple Internet of Things Framework for OpenWRT
+# Developed by Okyza Maherdy Prabowo
+# Email: okyzaprabowo@students.itb.ac.id
+
+#check if param is equal to 1
+if [ "$#" == "1" ];  then
+	#read value from pin
+	cat /sys/class/gpio/gpio$1/value
+else
+	echo "	use: readpin pin_number"
+fi

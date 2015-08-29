@@ -1,0 +1,21 @@
+# MinIoT, A Simple Internet of Things Framework for OpenWRT
+# Developed by Okyza Maherdy Prabowo
+# Email: okyzaprabowo@students.itb.ac.id
+
+#check if params is equal to 2
+if [ "$#" == "2" ]; then
+	#give value 0
+	if [ "$1" == "0" ]; then
+		echo 0 > /sys/devices/virtual/gpio/gpio$2/value
+	#give value 1
+	elif [ "$1" == "1" ]; then
+		echo 1 > /sys/devices/virtual/gpio/gpio$2/value
+	else
+		echo "Command is wrong"
+	fi
+#when params is not equal to 2
+else
+	echo "	use: writepin value pin_number"
+	echo " 	example: writepin 1 21"
+fi
+
