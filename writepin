@@ -1,6 +1,6 @@
-# MinIoT, A Simple Internet of Things Framework for OpenWRT
-# Developed by Okyza Maherdy Prabowo
-# Email: okyzaprabowo@students.itb.ac.id
+# Simple shell script for accessing OpenWRT GPIO
+# Written by Okyza Maherdy Prabowo
+# Email: okyzaprabowo@live.com
 
 #check if params is equal to 2
 if [ "$#" == "2" ]; then
