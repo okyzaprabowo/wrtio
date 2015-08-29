@@ -1,0 +1,14 @@
+#Example blink
+
+#when $1 is first argument
+pinmode output $1
+
+while [ : ]
+do
+	writepin 1 $1
+	sleep 1s
+	writepin 0 $1
+	sleep 1s
+done	
+
+pinmode clear $1
