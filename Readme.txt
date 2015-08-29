@@ -1,4 +1,5 @@
 This is simple shell scripting for accessing GPIO OpenWRT
+Tested in GL.Inet Router
 
 You can use "pinmode" like:
 use: pinmode config_method pin_number
