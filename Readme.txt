@@ -1,4 +1,4 @@
-This is simple shell scripting for accessing GPIO OpenWRT
+This is simple shell scripting and Python library for accessing GPIO OpenWRT
 Tested in GL.Inet Router
 
 At first, upload all of files in this repo to your router, and then copy pinmode, readpin, and write to /bin folder. 
